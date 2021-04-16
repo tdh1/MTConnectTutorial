@@ -1,0 +1,20 @@
+Open a web browser
+
+Navigate to http://[ip address]:8000
+
+Login
+	* Username: qdr
+	* Password: qdr
+	
+Navigate to "Administration"
+	* Goto Custom Queries > Manage Queries
+	* Click "Creat New Query"
+	* Duplicate the query shown in "04-01 Example Query Configuration.html" in the Tutorials folder copied from the thumb drive
+
+Click on the site logo
+
+Navigate to "Query repository"
+
+Select the query that you just created
+
+Walk through a different user-configured queries

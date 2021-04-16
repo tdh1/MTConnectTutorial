@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html dir="ltr" class="client-js" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Installing C++ Agent on Ubuntu - MTConnect® User's Portal</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.1">
+<link rel="shortcut icon" href="http://mtcup.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://mtcup.org/opensearch_desc.php" title="MTConnect® User's Portal (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://mtcup.org/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/">
+<link rel="alternate" type="application/atom+xml" title="MTConnect® User's Portal Atom feed" href="http://mtcup.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/A.css">
+<style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: mtcup873_mw764-mw_:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+
+<script src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/load.js"></script><script src="/load.php?debug=false&amp;lang=en&amp;modules=jquery%2Cmediawiki&amp;only=scripts&amp;skin=cavendishmw&amp;version=20130528T234930Z"></script><script src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/load_002.txt"></script>
+<script>if(window.mw){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Installing_C++_Agent_on_Ubuntu","wgTitle":"Installing C++ Agent on Ubuntu","wgCurRevisionId":41614,"wgArticleId":8276,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Installing_C++_Agent_on_Ubuntu","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":true,"previewDialog":false,"publish":true,"toc":false}});}</script><script>if(window.mw){mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"cavendishmw","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"breadcrumbs-showcrumbs":true,"breadcrumbs-delimiter":"\x3e","breadcrumbs-numberofcrumbs":5,"breadcrumbs-namespaces":true,"breadcrumbs-filter-duplicates":false,"breadcrumbs-preceding-text":"","variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});}</script>
+<script>if(window.mw){mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);}</script><script src="/load.php?debug=false&amp;lang=en&amp;modules=jquery.client%2Ccookie%2CmwExtension%7Cmediawiki.legacy.ajax%2Cwikibits%7Cmediawiki.notify%2Cutil%7Cmediawiki.page.startup&amp;skin=cavendishmw&amp;version=20170428T235308Z&amp;*"></script><script src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/load_003.txt"></script>
+<style type="text/css">.source-bash{line-height:normal}.source-bash li,.source-bash pre{line-height:normal;border:0 none #fff}.bash.source-bash .de1,.bash.source-bash .de2{font:1em/1.2em monospace;margin:0;padding:0;background:none;vertical-align:top;font-family:monospace,monospace}.bash.source-bash{font-family:monospace}.bash.source-bash .imp{font-weight:bold;color:red}.bash.source-bash li,.bash.source-bash .li1{font-weight:normal;vertical-align:top}.bash.source-bash .ln{width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top}.bash.source-bash .li2{font-weight:bold;vertical-align:top}.bash.source-bash .kw1{color:#000;font-weight:bold}.bash.source-bash .kw2{color:#c20cb9;font-weight:bold}.bash.source-bash .kw3{color:#7a0874;font-weight:bold}.bash.source-bash .co0{color:#666;font-style:italic}.bash.source-bash .co1{color:maroon}.bash.source-bash .co2{color:#c00;font-style:italic}.bash.source-bash .co3{color:#000;font-weight:bold}.bash.source-bash .co4{color:#666}.bash.source-bash .es1{color:#009;font-weight:bold}.bash.source-bash .es2{color:#007800}.bash.source-bash .es3{color:#007800}.bash.source-bash .es4{color:#007800}.bash.source-bash .es5{color:#780078}.bash.source-bash .es_h{color:#009;font-weight:bold}.bash.source-bash .br0{color:#7a0874;font-weight:bold}.bash.source-bash .sy0{color:#000;font-weight:bold}.bash.source-bash .st0{color:red}.bash.source-bash .st_h{color:red}.bash.source-bash .nu0{color:#000}.bash.source-bash .re0{color:#007800}.bash.source-bash .re1{color:#007800}.bash.source-bash .re2{color:#007800}.bash.source-bash .re4{color:#007800}.bash.source-bash .re5{color:#603}.bash.source-bash .ln-xtra,.bash.source-bash li.ln-xtra,.bash.source-bash div.ln-xtra{background-color:#ffc}.bash.source-bash span.xtra{display:block}</style><style type="text/css">.source-cpp{line-height:normal}.source-cpp li,.source-cpp pre{line-height:normal;border:0 none #fff}.cpp.source-cpp .de1,.cpp.source-cpp .de2{font:1em/1.2em monospace;margin:0;padding:0;background:none;vertical-align:top;font-family:monospace,monospace}.cpp.source-cpp{font-family:monospace}.cpp.source-cpp .imp{font-weight:bold;color:red}.cpp.source-cpp li,.cpp.source-cpp .li1{font-weight:normal;vertical-align:top}.cpp.source-cpp .ln{width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top}.cpp.source-cpp .li2{font-weight:bold;vertical-align:top}.cpp.source-cpp .kw1{color:#00f}.cpp.source-cpp .kw2{color:#00f}.cpp.source-cpp .kw3{color:#00d}.cpp.source-cpp .kw4{color:#00f}.cpp.source-cpp .co1{color:#666}.cpp.source-cpp .co2{color:#390}.cpp.source-cpp .coMULTI{color:red;font-style:italic}.cpp.source-cpp .es0{color:#009;font-weight:bold}.cpp.source-cpp .es1{color:#009;font-weight:bold}.cpp.source-cpp .es2{color:#609;font-weight:bold}.cpp.source-cpp .es3{color:#609;font-weight:bold}.cpp.source-cpp .es4{color:#609;font-weight:bold}.cpp.source-cpp .es5{color:#069;font-weight:bold}.cpp.source-cpp .br0{color:green}.cpp.source-cpp .sy0{color:green}.cpp.source-cpp .sy1{color:navy}.cpp.source-cpp .sy2{color:#000040}.cpp.source-cpp .sy3{color:#000040}.cpp.source-cpp .sy4{color:teal}.cpp.source-cpp .st0{color:red}.cpp.source-cpp .nu0{color:#00d}.cpp.source-cpp .nu6{color:#208080}.cpp.source-cpp .nu8{color:#208080}.cpp.source-cpp .nu12{color:#208080}.cpp.source-cpp .nu16{color:purple}.cpp.source-cpp .nu17{color:purple}.cpp.source-cpp .nu18{color:purple}.cpp.source-cpp .nu19{color:purple}.cpp.source-cpp .me1{color:#078}.cpp.source-cpp .me2{color:#078}.cpp.source-cpp .ln-xtra,.cpp.source-cpp li.ln-xtra,.cpp.source-cpp div.ln-xtra{background-color:#ffc}.cpp.source-cpp span.xtra{display:block}</style><script async="" src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/load.txt"></script><script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=jquery.autoEllipsis%2CcheckboxShiftClick%2Chidpi%2ChighlightText%2CmakeCollapsible%2Cmw-jump%2Cplaceholder%2Csuggestions%7Cmediawiki.action.view.postEdit%7Cmediawiki.api%2Chidpi%2CsearchSuggest%2Cuser%7Cmediawiki.page.ready&amp;skin=cavendishmw&amp;version=20170428T235309Z&amp;*"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Installing_C_Agent_on_Ubuntu skin-cavendishmw action-view">
+
+<div id="container"> <!-- cavendishmw: s/globalWrapper/container/ -->
+
+    <!-- <div id="mozilla-org"><a href="#">Mozilla Skin</a></div> -->
+    <div id="header" class="noprint">
+        <a name="top" id="contentTop"></a>
+
+        <!-- Logo + site name -->
+        <h1>
+            <a href="http://mtcup.org/wiki/Main_Page" style="text-indent:3em;width:auto;height:auto;background:transparent url(/images/xMTCup_Logo.png.pagespeed.ic.onozMpyn3g.png) no-repeat scroll 15px 0" title="Visit the main page">MTConnect® User's Portal</a>        </h1>
+
+        <!-- Content action buttons -->
+                <ul>
+            <li id="ca-nstab-main" class="selected"><a href="http://mtcup.org/wiki/Installing_C%2B%2B_Agent_on_Ubuntu" primary="1" context="subject" title="View the content page [c]" accesskey="c">Page</a></li>
+            <li id="ca-talk" class="new"><a href="http://mtcup.org/index.php?title=Talk:Installing_C%2B%2B_Agent_on_Ubuntu&amp;action=edit&amp;redlink=1" primary="1" context="talk" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+            <li id="ca-viewsource"><a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;action=edit" primary="1" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+            <li id="ca-history"><a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;action=history" rel="archives" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+        </ul>
+
+        <!-- Search box -->
+            <form action="/index.php" id="searchform">
+        <label for="searchInput">Search</label>
+        <input name="title" value="Special:Search" type="hidden">
+        <input name="search" title="Search MTConnect® User's Portal [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off" placeholder="Search" type="search">
+        <input name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" type="submit">&nbsp;
+        <input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit">    </form>
+    </div> <!-- End header div -->
+
+    <div id="mBody">
+        <div id="side" class="noprint"> <!-- cavendishmw: s/column-one/side/ -->
+            <ul id="nav">
+                        <li><span>Personal tools</span>
+            <ul>
+                            <li id="pt-createaccount"><a href="http://mtcup.org/index.php?title=Special:UserLogin&amp;returnto=Installing+C%2B%2B+Agent+on+Ubuntu&amp;type=signup">Create account</a></li>                            <li id="pt-login"><a href="http://mtcup.org/index.php?title=Special:UserLogin&amp;returnto=Installing+C%2B%2B+Agent+on+Ubuntu" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>                        </ul>
+        </li>
+        <li><span>Navigation</span>
+            <ul>
+                <li id="n-mainpage-description"><a href="http://mtcup.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+                <li id="n-portal"><a href="http://mtcup.org/wiki/MTCup:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+                <li id="n-currentevents"><a href="http://mtcup.org/wiki/MTCup:Current_events" title="Find background information on current events">Current events</a></li>
+                <li id="n-recentchanges"><a href="http://mtcup.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+                <li id="n-randompage"><a href="http://mtcup.org/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+                <li id="n-help"><a href="http://mtcup.org/wiki/Help:Contents" title="The place to find out">Help</a></li>
+            </ul>
+        </li>
+    <li><span>Toolbox</span>
+        <ul>
+                <li id="t-whatlinkshere"><a href="http://mtcup.org/wiki/Special:WhatLinksHere/Installing_C%2B%2B_Agent_on_Ubuntu" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+                <li id="t-recentchangeslinked"><a href="http://mtcup.org/wiki/Special:RecentChangesLinked/Installing_C%2B%2B_Agent_on_Ubuntu" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+                <li id="t-specialpages"><a href="http://mtcup.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+                <li id="t-print"><a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+                <li id="t-permalink"><a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;oldid=41614" title="Permanent link to this revision of the page">Permanent link</a></li>
+                <li id="t-info"><a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;action=info">Page information</a></li>
+        </ul>
+    </li>
+            </ul> <!-- /nav -->
+        </div> <!-- /side -->
+
+        <div id="mainContent"> <!-- cavendishmw: s/column-content/mainContent/ -->
+            
+            <h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Installing C++ Agent on Ubuntu</span></h1>
+            <div id="bodyContent" class="mw-body">
+                <div id="siteSub">From MTConnect® User's Portal</div>
+                <div id="contentSub"></div>
+                            <div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+            
+                <!-- start content -->
+                <div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div id="breadcrumbs"> <a href="http://mtcup.org/wiki/Installing_C%2B%2B_Agent_on_Ubuntu" title="Installing C++ Agent on Ubuntu">Installing C++ Agent on Ubuntu</a></div><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Install_Required_Dependencies"><span class="tocnumber">2</span> <span class="toctext">Install Required Dependencies</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Download_and_build_the_agent"><span class="tocnumber">3</span> <span class="toctext">Download and build the agent</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Setup_a_configuration_directory"><span class="tocnumber">4</span> <span class="toctext">Setup a configuration directory</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Configure_the_Agent"><span class="tocnumber">5</span> <span class="toctext">Configure the Agent</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Setup_the_Upstart_scripts"><span class="tocnumber">6</span> <span class="toctext">Setup the Upstart scripts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Start_the_services"><span class="tocnumber">7</span> <span class="toctext">Start the services</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Overview"> Overview </span></h2>
+<p>Installation procedure for running MTConnect Agent on ubuntu 14.04 
+LTS. This is a general guide and covers the basic configuration of the 
+MTConnect simulator.
+</p>
+<h2> <span class="mw-headline" id="Install_Required_Dependencies"> Install Required Dependencies </span></h2>
+<p>The C++ agent depends on libxml2 and for testing libcppunit. The rest
+ are the standard packages for building software. We also use cmake to 
+generate the make files.
+</p>
+<pre> sudo apt-get update
+ sudo apt-get install libxml2 libxml2-dev cmake git libcppunit-dev build-essential screen ruby curl
+</pre>
+<h2> <span class="mw-headline" id="Download_and_build_the_agent"> Download and build the agent </span></h2>
+<p>Make a directory for the agent work and our build directory
+</p>
+<pre> mkdir -p ~/agent/build
+ cd ~/agent
+ 
+</pre>
+<p>Use git to clone the agent from the repo and create the makefiles. 
+We're going to be building the Release version; a debug version can also
+ be built, refer to the cmake docs for more info.
+</p>
+<pre> git clone <a rel="nofollow" class="external free" href="https://github.com/mtconnect/cppagent.git">https://github.com/mtconnect/cppagent.git</a>
+ cd build
+ cmake -D CMAKE_BUILD_TYPE=Release ../cppagent/
+</pre>
+<p>Now build the app and install it in /usr/local/bin
+</p>
+<pre> make
+ sudo cp agent/agent /usr/local/bin
+</pre>
+<p>There may be a few build warnings, these can be ignored.
+</p>
+<h2> <span class="mw-headline" id="Setup_a_configuration_directory"> Setup a configuration directory </span></h2>
+<p>Setup the agent
+</p>
+<pre> sudo mkdir -p /etc/mtconnect/agent /etc/mtconnect/adapter
+ cd ~/agent/cppagent
+ sudo cp -r styles schemas simulator/VMC-3Axis.xml /etc/mtconnect/agent
+</pre>
+<p>Setup the simulator
+</p>
+<pre> sudo cp simulator/VMC-3Axis-Log.txt simulator/run_scenario.rb /etc/mtconnect/adapter
+</pre>
+<h2> <span class="mw-headline" id="Configure_the_Agent"> Configure the Agent </span></h2>
+<p>Install the text file below for the configuration. To do this copy 
+and paste the code into a new text document. Line numbers as seen below 
+are added from the copy and paste process, get rid of them as they are 
+not part of the actual code. Copy and paste the edited text into the 
+Terminal and press enter.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><ol><li class="li1"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">sh</span> <span class="re5">-c</span> <span class="st_h">'cat &lt;&lt;EOT &gt; /etc/mtconnect/agent/agent.cfg</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">Devices = /etc/mtconnect/agent/VMC-3Axis.xml</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">AllowPut = true</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">ReconnectInterval = 1000</span></pre></li><li class="li2"><pre class="de2"><span class="st_h">BufferSize = 17</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">SchemaVersion = 1.3</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st_h">Adapters { </span></pre></li><li class="li1"><pre class="de1"><span class="st_h">   VMC-3Axis { </span></pre></li><li class="li2"><pre class="de2"><span class="st_h">      Host = 127.0.0.1</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">      Port = 7878</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">   } </span></pre></li><li class="li1"><pre class="de1"><span class="st_h">}</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li2"><pre class="de2"><span class="st_h">Files {</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    schemas {</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">        Path = /etc/mtconnect/agent/schemas</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">        Location = /schemas/</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    }</span></pre></li><li class="li2"><pre class="de2"><span class="st_h">    styles {</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">        Path = /etc/mtconnect/agent/styles</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">        Location = /styles/</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    }</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    Favicon {</span></pre></li><li class="li2"><pre class="de2"><span class="st_h">        Path = /etc/mtconnect/agent/styles/favicon.ico</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">        Location = /favicon.ico</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    }</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">}</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li2"><pre class="de2"><span class="st_h">StreamsStyle {</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">  Location = /styles/Streams.xsl</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">}</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st_h"># Logger Configuration</span></pre></li><li class="li2"><pre class="de2"><span class="st_h">logger_config</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">{</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    logging_level = info</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">    output = file /var/log/mtc_agent.log</span></pre></li><li class="li1"><pre class="de1"><span class="st_h">}</span></pre></li><li class="li2"><pre class="de2"><span class="st_h">EOT'</span></pre></li></ol></div></div>
+<p>Check your work. In the first line of the text file above, 
+"/etc/mtconnect/agent/agent.cfg" is the location where the file is 
+saved. Open the file manager and navigate to that location. If you 
+entered the code right, you should see the "agent.cfg" file. Open the 
+file and make sure it looks just like the text above and proceed.
+</p><p>Test the agent config from the command line.
+</p>
+<pre> agent debug /etc/mtconnect/agent/agent.cfg
+</pre>
+<p>If it works, you should see something like:
+</p>
+<pre> MTConnect Agent Version 1.3.0.4 - built on Thu Sep  4 00:22:34 2014
+     0 INFO  [0] init.config: Starting agent on port 5000
+     5 INFO  [0] init.config: Adding adapter for VMC-3Axis on 127.0.0.1:7878
+     6 DEBUG [0] agent: registerFile: Path /etc/mtconnect/agent/styles/favicon.ico is not a directory: Unable to find directory /etc/mtconnect/agent/styles/favicon.ico, trying as a file
+     6 DEBUG [1] input.connector: Connecting to data source: 127.0.0.1 on port: 7878
+     6 WARN  [1] input.connector: connect: Socket exception: unable to connect to '127.0.0.1:7878'
+     6 INFO  [1] input.adapter: Will try to reconnect in 1000 milliseconds
+  1006 DEBUG [1] input.connector: Connecting to data source: 127.0.0.1 on port: 7878
+  1007 WARN  [1] input.connector: connect: Socket exception: unable to connect to '127.0.0.1:7878'
+  1007 INFO  [1] input.adapter: Will try to reconnect in 1000 milliseconds
+</pre>
+<h2> <span class="mw-headline" id="Setup_the_Upstart_scripts"> Setup the Upstart scripts </span></h2>
+<p>Just like configuring the agent above, install the following text files.
+</p><p>The <a rel="nofollow" class="external text" href="http://upstart.ubuntu.com/">Upstart</a> script to start the agent:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><ol><li class="li1"><pre class="de1">sudo sh <span class="sy2">-</span>c <span class="st0">'cat &lt;&lt;EOT &gt; /etc/init/mtc_agent.conf</span></pre></li><li class="li1"><pre class="de1"><span class="st0">description "MTConnect Agent"</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">start on (net-device-up</span></pre></li><li class="li2"><pre class="de2"><span class="st0">          and local-filesystems</span></pre></li><li class="li1"><pre class="de1"><span class="st0">      and runlevel [2345])</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">stop on runlevel[016]</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li2"><pre class="de2"><span class="st0">exec /usr/local/bin/agent run /etc/mtconnect/agent/agent.cfg</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">respawn</span></pre></li><li class="li1"><pre class="de1"><span class="st0">respawn limit 10 600</span></pre></li><li class="li1"><pre class="de1"><span class="st0">EOT'</span></pre></li></ol></div></div>
+<p>The Upstart script for the adapter:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><ol><li class="li1"><pre class="de1">sudo sh <span class="sy2">-</span>c <span class="st0">'cat &lt;&lt;EOT &gt; /etc/init/mtc_adapter.conf</span></pre></li><li class="li1"><pre class="de1"><span class="st0">description "MTConnect Adapter Simulator"</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">start on (net-device-up</span></pre></li><li class="li2"><pre class="de2"><span class="st0">          and local-filesystems</span></pre></li><li class="li1"><pre class="de1"><span class="st0">      and runlevel [2345])</span></pre></li><li class="li1"><pre class="de1"><span class="st0">stop on runlevel[016]</span></pre></li><li class="li1"><pre class="de1">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">exec ruby /etc/mtconnect/adapter/run_scenario.rb -l /etc/mtconnect/adapter/VMC-3Axis-Log.txt</span></pre></li><li class="li2"><pre class="de2">&nbsp;</pre></li><li class="li1"><pre class="de1"><span class="st0">respawn</span></pre></li><li class="li1"><pre class="de1"><span class="st0">respawn limit 10 600</span></pre></li><li class="li1"><pre class="de1"><span class="st0">EOT'</span></pre></li></ol></div></div>
+<p>Cycle the power (reboot) and proceed.
+</p>
+<h2> <span class="mw-headline" id="Start_the_services"> Start the services </span></h2>
+<p>Start both services
+</p>
+<pre> sudo start mtc_agent
+ sudo start mtc_adapter
+</pre>
+<p>Look for the processes
+</p>
+<pre> pgrep -a ruby
+ pgrep -a agent
+</pre>
+<p>Test the services
+</p>
+<pre> curl <a rel="nofollow" class="external free" href="http://localhost:5000/current">http://localhost:5000/current</a>
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 53/1000000
+Preprocessor generated node count: 92/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mtcup873_mw764-mw_:pcache:idhash:8276-0!*!*!!en!*!* and timestamp 20180426130717 -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;oldid=41614">http://mtcup.org/index.php?title=Installing_C%2B%2B_Agent_on_Ubuntu&amp;oldid=41614</a>"</div>
+                <div id="catlinks" class="catlinks catlinks-allhidden"></div>                <!-- end content -->
+
+                                <div class="visualClear"></div>
+            </div>
+        </div> <!-- /mainContent -->
+    </div> <!-- /mBody -->
+
+    <div class="visualClear"></div>
+        <div id="footer" role="contentinfo">
+            <div id="f-copyrightico">
+                <a href="http://creativecommons.org/licenses/by/3.0/"><script data-pagespeed-no-defer="">(function(){var g=this;function h(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};function l(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};function m(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n;function p(b,d,a,c,e){this.h=b;this.j=d;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=c;this.b={};this.a=[];this.c={}}function q(b,d){var a,c,e=d.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&c<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});function r(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(t())),131072>=a.length+e.length&&(a+=e),d=!0);u=a;if(d){c=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(v){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function t(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var u="";h("pagespeed.CriticalImages.getBeaconData",function(){return u});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','http://mtcup.org/wiki/Installing_C%2B%2B_Agent_on_Ubuntu','sNm1DrDrak',true,false,'hETXNJ1vIFA');</script><img src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/88x31.png" alt="a Creative Commons Attribution 3.0 Unported License" data-pagespeed-url-hash="869070197" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" width="88" height="31"></a>
+            </div>
+            <div id="f-poweredbyico">
+                <a href="http://www.mediawiki.org/"><img src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" data-pagespeed-url-hash="613872126" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" width="88" height="31"></a>
+                <a href="http://www.systeminsights.com/"><img src="00%20Installing%20C++%20Agent%20on%20Ubuntu%20-%20MTConnect%C2%AE%20User's%20Portal_files/88x31xsi_logo.png" alt="Brought to you by System Insights" title="Brought to you by System Insights" data-pagespeed-url-hash="1800430360" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" width="88" height="31"></a>
+            </div>
+        <ul id="f-list">
+                <li id="lastmod"> This page was last modified on 6 June 2016, at 09:42.</li>
+                <li id="viewcount">This page has been accessed 36,272 times.</li>
+                <li id="copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by/3.0/">a Creative Commons Attribution 3.0 Unported License</a>.</li>
+                <li id="privacy"><a href="http://mtcup.org/wiki/MTCup:Privacy_policy" title="MTCup:Privacy policy">Privacy policy</a></li>
+                <li id="about"><a href="http://mtcup.org/wiki/MTCup:About" title="MTCup:About">About MTConnect® User's Portal</a></li>
+                <li id="disclaimer"><a href="http://mtcup.org/wiki/MTCup:General_disclaimer" title="MTCup:General disclaimer">Disclaimers</a></li>
+            </ul>
+    </div>
+    </div>
+<script>if(window.mw){mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});}</script>
+<script>if(window.mw){mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi"],null,true);}</script>
+<script>if(window.mw){mw.loader.state({"site":"ready"});}</script>
+<!-- Served in 0.143 secs. --><div style="display: none; font-size: 11.5167px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><div style="display: none; font-size: 11.5167px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

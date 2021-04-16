@@ -1,0 +1,24 @@
+Open a web browser
+
+Probe request: http://[ip address]:5000/probe
+
+Current request: http://[ip address]:5000/current
+
+Sample request: http://[ip address]:5000/sample
+
+Examples of bounding your request:
+	* Find all data for a specific sequence number: http://[ip address]:5000/current?at=[sequence#]
+	* Find all data for a specific component: http://[ip address]:5000/current?path=//Axes or http://[ip address]:5000/current?path=//Path
+	* Find specific type of data: http://[ip address]:5000/current?path=DataItem[@type=’POSITION’] or http://[ip address]:5000/current?path=DataItem[@type=’ANGLE’]
+
+Steps to record data properly using polling:
+	* Probe request to see what data exists
+	* Current request to determine nextSequence
+	* Take first sample: http://[ip address]:5000/sample?from=[nextSequence]&count=1000
+	* Take next sample: http://[ip address]:5000/sample?from=[nextSequence+1000]&count=1000
+	* Continue for subsequent samples
+
+Push-based streaming using interval argument (in milliseconds): http://[ip address]:5000/sample?count=1000&interval=1000
+	
+Real-time updates (requires path argument): http://[ip address]:5000/sample?interval=0&path=//DataItem[@type=’POSITION’]
+

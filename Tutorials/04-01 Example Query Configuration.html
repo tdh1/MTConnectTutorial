@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="NONE,NOARCHIVE">
+
+	<title>Query-able Data Repository Curation System</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="/static/libs/reset/2.0/reset.css"  />-->
+    <link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/bootstrap.css" media="screen">
+	<!--<link rel="stylesheet" type="text/css" href="/static/resources/css/icons.css" media="screen" />-->
+    <link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/jquery-ui.css">
+
+    
+<link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/theme.css">
+
+    
+    
+    <link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/queries_list.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="04-01%20Example%20Query%20Configuration_files/form.css" media="screen">
+
+
+    <!--nmrr added-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--nmrr added end-->
+</head>
+<body>
+    
+<div class="container" role="main">
+    
+<div class="page-header">
+    <div class="left-block">
+            <a href="https://smstestbed.nist.gov/qdr/" class="text">
+                <img src="04-01%20Example%20Query%20Configuration_files/mgi-logo.png" alt="MGI logo">
+                <h1>Query-able Data Repository<sup><span class="beta">β3</span></sup></h1>
+            </a>
+            <a href="https://smstestbed.nist.gov/qdr/" class="text">
+                <p class="lead">A Component of the Smart Manufacturing Systems Test Bed</p>
+            </a>
+    </div>
+    <div class="right-block">
+        <span class="text">
+            
+                <a href="https://smstestbed.nist.gov/qdr/logout" class="btn btn-primary">Logout</a> |
+                <a href="https://smstestbed.nist.gov/qdr/dashboard/" class="btn btn-primary">Dashboard</a>
+            
+        </span>
+    </div>
+</div>
+    
+<div id="dialog-query-delete" title="Delete a query" style="display:none;">
+    <p></p>
+    <p>
+        You are going to delete a query.
+    </p>
+</div>
+
+
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://smstestbed.nist.gov/qdr/admin/">Administration</a>
+        </div>
+
+
+        <div class="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Users <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/">Manage Users</a></li>
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/user-requests">Account Requests</a></li>
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/contact-messages">Contact Messages</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Templates <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/xml-schemas">Manage Templates</a></li>
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/xml-schemas/manage-types">Manage Types</a></li>
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/xml-schemas/manage-xslt">Manage XSLT</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Custom Queries <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/custom_queries/list">Manage Queries</a></li>
+                        <li><a href="https://smstestbed.nist.gov/qdr/admin/custom_queries/list_errors">View Error Log</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://smstestbed.nist.gov/qdr/admin/website">Website</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+    <div class="row white">
+        
+            <div class="col-md-12">
+                
+            </div>
+        
+
+        
+<div class="col-md-12">
+    <h2>Modify or Delete the Query</h2>
+    
+You can edit the query, save the modifications or delete the query.
+
+    <hr>
+
+    
+
+<form id="form_custom_queries" action="#" enctype="multipart/form-data" method="post">
+    <input name="csrfmiddlewaretoken" value="2Ml6qLmxa4bWoYNvuuAPJ4rmAIJzSYwj" type="hidden">
+    <h4>General Information</h4>
+    
+    
+        <input id="id_id" name="id" value="59e77d0798b7db007f9a7d02" type="hidden">
+    
+        <input id="to_delete" name="to_delete" type="hidden">
+    
+    
+    
+
+    
+    <div class="form-group">
+        <div> <label for="id_name">Query name:</label> </div>
+        <input id="id_name" name="name" value="QueryByDevice" type="text">
+
+        
+    </div>
+    
+
+    
+    <div class="form-group">
+        <div> <label for="id_is_limited">Is the query limited:</label> </div>
+        <input checked="checked" id="id_is_limited" name="is_limited" type="checkbox">
+
+        
+    </div>
+    
+
+    
+    <div class="form-group">
+        <div> <label for="id_number_records">Number of records to limit the query:</label> </div>
+        <input id="id_number_records" min="1" name="number_records" value="1000" type="number">
+
+        
+    </div>
+    
+
+    
+    <div class="form-group">
+        <div> <label for="id_schema">Schema:</label> </div>
+        <select id="id_schema" name="schema">
+<option value="59e76a0db06cd9002bda00d2">demo-simple-spreadsheet</option>
+<option value="59e76b2e7791a20073ffedd5" selected="selected">NistStreams_1.3</option>
+<option value="59e76a0db06cd9002bda00d4">demo-simple-file-upload</option>
+<option value="59e76b1e7791a20073ffedd3">MTConnectStreams_1.3</option>
+</select>
+
+        
+    </div>
+    
+
+    
+    <div class="form-group">
+        <div> <label for="id_group_0">Group:</label> </div>
+        <ul id="id_group"><li><label for="id_group_0"><input id="id_group_0" name="group" value="admin" type="radio"> Admin-only</label></li>
+<li><label for="id_group_1"><input checked="checked" id="id_group_1" name="group" value="user" type="radio"> User-allowed</label></li></ul>
+
+        
+    </div>
+    
+
+    
+
+    <hr>
+    <h4>Step Configuration</h4>
+    <input id="id_form-TOTAL_FORMS" name="form-TOTAL_FORMS" value="5" type="hidden"><input id="id_form-INITIAL_FORMS" name="form-INITIAL_FORMS" value="0" type="hidden"><input id="id_form-MIN_NUM_FORMS" name="form-MIN_NUM_FORMS" value="0" type="hidden"><input id="id_form-MAX_NUM_FORMS" name="form-MAX_NUM_FORMS" value="1000" type="hidden">
+    <div id="formsetZone">
+        
+            
+                <input id="id_form-0-step_id" name="form-0-step_id" value="59e77d0698b7db007f9a7cfd" type="hidden">
+            
+            <div class="nsorte">
+                
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-name">Name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-name" name="form-0-name" value="PerDevice" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-xpath">XPath:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-xpath" name="form-0-xpath" value="content.MTConnectStreams.Streams.DeviceStream" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-output_field">Output field only:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-output_field" name="form-0-output_field" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-target">Target:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-0-target" name="form-0-target">
+<option value="attribute" selected="selected">Attribute</option>
+<option value="name">Name</option>
+<option value="value">Value</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-value">Attribute name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-value" name="form-0-value" value="name" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-data_type">Data type:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-0-data_type" name="form-0-data_type">
+<option value="data" selected="selected">Data</option>
+<option value="date">Date-Time</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-restriction">Restriction:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input checked="checked" class="full_item" id="id_form-0-restriction" name="form-0-restriction" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-data_min_range">Minimum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-data_min_range" name="form-0-data_min_range" value="1" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-data_max_range">Maximum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-data_max_range" name="form-0-data_max_range" value="1" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-data_infinity">Infinity:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-0-data_infinity" name="form-0-data_infinity" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-0-date_range">Maximum day range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-0-date_range" name="form-0-date_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+            </div>
+            <hr>
+        
+            
+                <input id="id_form-1-step_id" name="form-1-step_id" value="59e77d0798b7db007f9a7cfe" type="hidden">
+            
+            <div class="nsorte">
+                
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-name">Name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-name" name="form-1-name" value="Component" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-xpath">XPath:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-xpath" name="form-1-xpath" value=".ComponentStream" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-output_field">Output field only:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-output_field" name="form-1-output_field" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-target">Target:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-1-target" name="form-1-target">
+<option value="attribute" selected="selected">Attribute</option>
+<option value="name">Name</option>
+<option value="value">Value</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-value">Attribute name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-value" name="form-1-value" value="componentId" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-data_type">Data type:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-1-data_type" name="form-1-data_type">
+<option value="data" selected="selected">Data</option>
+<option value="date">Date-Time</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-restriction">Restriction:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input checked="checked" class="full_item" id="id_form-1-restriction" name="form-1-restriction" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-data_min_range">Minimum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-data_min_range" name="form-1-data_min_range" value="1" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-data_max_range">Maximum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-data_max_range" name="form-1-data_max_range" value="5" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-data_infinity">Infinity:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-1-data_infinity" name="form-1-data_infinity" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-1-date_range">Maximum day range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-1-date_range" name="form-1-date_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+            </div>
+            <hr>
+        
+            
+                <input id="id_form-2-step_id" name="form-2-step_id" value="59e77d0798b7db007f9a7cff" type="hidden">
+            
+            <div class="nsorte">
+                
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-name">Name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-2-name" name="form-2-name" value="DataSets" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-xpath">XPath:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-2-xpath" name="form-2-xpath" value=".*" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-output_field">Output field only:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input checked="checked" class="full_item" id="id_form-2-output_field" name="form-2-output_field" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-target">Target:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-2-target" name="form-2-target" disabled="disabled">
+<option value="attribute" selected="selected">Attribute</option>
+<option value="name">Name</option>
+<option value="value">Value</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-value">Attribute name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-2-value" name="form-2-value" disabled="disabled" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-data_type">Data type:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-2-data_type" name="form-2-data_type" disabled="disabled">
+<option value="data" selected="selected">Data</option>
+<option value="date">Date-Time</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-restriction">Restriction:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-2-restriction" name="form-2-restriction" disabled="disabled" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-data_min_range">Minimum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-2-data_min_range" name="form-2-data_min_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-data_max_range">Maximum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-2-data_max_range" name="form-2-data_max_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-data_infinity">Infinity:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-2-data_infinity" name="form-2-data_infinity" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-2-date_range">Maximum day range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-2-date_range" name="form-2-date_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+            </div>
+            <hr>
+        
+            
+                <input id="id_form-3-step_id" name="form-3-step_id" value="59e77d0798b7db007f9a7d00" type="hidden">
+            
+            <div class="nsorte">
+                
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-name">Name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-3-name" name="form-3-name" value="Data" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-xpath">XPath:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-3-xpath" name="form-3-xpath" value=".*" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-output_field">Output field only:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input checked="checked" class="full_item" id="id_form-3-output_field" name="form-3-output_field" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-target">Target:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-3-target" name="form-3-target" disabled="disabled">
+<option value="attribute" selected="selected">Attribute</option>
+<option value="name">Name</option>
+<option value="value">Value</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-value">Attribute name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-3-value" name="form-3-value" disabled="disabled" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-data_type">Data type:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-3-data_type" name="form-3-data_type" disabled="disabled">
+<option value="data" selected="selected">Data</option>
+<option value="date">Date-Time</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-restriction">Restriction:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-3-restriction" name="form-3-restriction" disabled="disabled" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-data_min_range">Minimum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-3-data_min_range" name="form-3-data_min_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-data_max_range">Maximum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-3-data_max_range" name="form-3-data_max_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-data_infinity">Infinity:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-3-data_infinity" name="form-3-data_infinity" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-3-date_range">Maximum day range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-3-date_range" name="form-3-date_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+            </div>
+            <hr>
+        
+            
+                <input id="id_form-4-step_id" name="form-4-step_id" value="59e77d0798b7db007f9a7d01" type="hidden">
+            
+            <div class="nsorte">
+                
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-name">Name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-4-name" name="form-4-name" value="Values" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-xpath">XPath:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-4-xpath" name="form-4-xpath" value="." type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-output_field">Output field only:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input checked="checked" class="full_item" id="id_form-4-output_field" name="form-4-output_field" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-target">Target:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-4-target" name="form-4-target" disabled="disabled">
+<option value="attribute" selected="selected">Attribute</option>
+<option value="name">Name</option>
+<option value="value">Value</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-value">Attribute name:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-4-value" name="form-4-value" disabled="disabled" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-data_type">Data type:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <select class="full_item" id="id_form-4-data_type" name="form-4-data_type" disabled="disabled">
+<option value="data" selected="selected">Data</option>
+<option value="date">Date-Time</option>
+</select>
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-restriction">Restriction:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" id="id_form-4-restriction" name="form-4-restriction" disabled="disabled" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-data_min_range">Minimum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-4-data_min_range" name="form-4-data_min_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-data_max_range">Maximum range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-4-data_max_range" name="form-4-data_max_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-data_infinity">Infinity:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-4-data_infinity" name="form-4-data_infinity" type="checkbox">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group">
+                        <div class="col-xs-2">
+                            <label for="id_form-4-date_range">Maximum day range:</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <input class="full_item" disabled="disabled" id="id_form-4-date_range" name="form-4-date_range" type="text">
+                        </div>
+                        <div class="col-xs-6">
+                            
+                        </div><br>
+                    </div>
+                    
+                
+            </div>
+            <hr>
+        
+    </div>
+    <button class="btn btn-default" style="float: Left;">
+        Save modification
+    </button>
+
+</form>
+<button class="btn btn-default" onclick="delete_query();" style="float: Right;">
+    Delete
+</button>
+
+</div>
+
+    </div>
+
+    
+<footer>
+    <p class="pull-right">
+        v1.4.0-beta3
+        <a href="#">
+            <i class="fa fa-arrow-up"></i>
+            Back to top
+        </a>
+    </p>
+    <p class="menu-links">
+        <a href="https://smstestbed.nist.gov/qdr/">Home</a>
+        
+        | <a href="https://smstestbed.nist.gov/qdr/custom_queries/choosequery">Query repository</a>
+        | <a href="https://smstestbed.nist.gov/qdr/logout">Logout</a>
+        
+        | <a href="https://smstestbed.nist.gov/qdr/help">Help</a> | <a href="https://smstestbed.nist.gov/qdr/contact">Contact us</a>
+        | <a href="https://smstestbed.nist.gov/qdr/privacy-policy">Privacy policy</a> | <a href="https://smstestbed.nist.gov/qdr/terms-of-use">Terms of use</a>
+        | <a href="https://smstestbed.nist.gov/qdr/admin/">Administration</a>
+    </p>
+</footer>
+</div>
+
+
+    <!-- JQuery & JQuery UI -->
+	<script src="04-01%20Example%20Query%20Configuration_files/jquery.js"></script>
+	<script src="04-01%20Example%20Query%20Configuration_files/bootstrap.js"></script>
+    <script src="04-01%20Example%20Query%20Configuration_files/jquery-ui.js"></script>
+    <script src="04-01%20Example%20Query%20Configuration_files/csrf.js"></script>
+
+    
+
+    <script type="text/javascript">
+        window.__admin_media_prefix__ = "/static/admin/";
+    </script>
+
+    
+    <script type="application/javascript" src="04-01%20Example%20Query%20Configuration_files/curate.js"></script>
+    <script type="application/javascript" src="04-01%20Example%20Query%20Configuration_files/custom_queries_admin.js"></script>
+
+
+
+</body></html>

@@ -1,0 +1,21 @@
+.full_item{
+    width: 100%;
+    text-align: center;
+    font-size:100%;
+    top: 50%;
+    vertical-align: middle;
+}
+
+.log_file{
+    text-align: center;
+    font-size:100%;
+    top: 50%;
+    vertical-align: middle;
+}
+
+.additional_element{
+    width: 100%;
+    max-width:100%;
+    height:6em;
+    font-size:100%;
+}

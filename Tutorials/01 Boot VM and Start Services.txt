@@ -1,0 +1,47 @@
+After installing VirtualBox, ensure the "Host-Only Ethernet Adapter" is configured to support DHCP
+	* Go to Global Settings [Windows] or Preferences [Mac] and ensure an adapter exists in the Host Network Manager
+	* Goto properties for the adapter and navigate to the "Adapter" tab
+	* Configure Adapter Manually
+		# IPv4 Address: 10.10.0.1
+		# IPv4 Network Mask: 255.255.255.0
+	* Goto DHCP Server tab
+	* Configure Server
+		# Check "Enable Server"
+		# Server Address: 10.10.0.100
+		# Server Mask: 255.255.255.0
+		# Lower Address Bound: 10.10.0.101
+		# Upper Address Bound: 10.10.0.254
+	* Apply settings and retrun to "Machine Tools"
+
+Import the "MfgDataEnv" Virtual Machine
+	* File > Import Appliance
+	* Navigate to the folder you copied from the thumb drive
+	* Open the "MfgDataEnv" folder
+	* Select the "MfgDataEnv.vbox" file
+	* Start the VM
+	
+Login using the User Account
+	* Username: user
+	* Password: user
+
+Enter "ip address show" and record the ip address for the "eth1" adapter. Chances are it is 10.10.0.101.
+	
+Push "F2" two times to generate two additional user sessions
+
+Start and Verify Services
+	* Celery
+		# sudo /etc/init.d/celeryd start
+	* MongoDB
+		# /opt/mongodb/bin/mongod --config /srv/qdr/conf/mongodb.conf
+	* QDR Appliance
+		# F3
+		# sudo -i -u qdr
+		# enter "user" as the password
+		# python /srv/qdr/manage.py runserver 0.0.0.0:8000 --noreload
+	* Verify the VDS service started and is running
+		# F3
+		# pgrep -a ruby
+			RESPONSE>> 934 ruby /etc/mtconnect/adapter/run_scenario.rb -l /etc/mtconnect/adapter/VMC-3Axis-Log.txt
+		# pgrep -a agent
+			RESPONSE>> 935 /usr/local/bin/agent run /etc/mtconnect/agent/agent.cfg
+		# curl http://localhost:5000/current

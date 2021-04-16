@@ -1,0 +1,157 @@
+body {
+    padding-bottom: 1em;
+    background: #035F8B url(../images/background.png) repeat;
+
+}
+
+.beta{
+        border:3px solid grey;
+        color:grey;
+        padding:3px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-radius:5px;
+        font-size: 30px;
+}
+
+.page-header {
+    min-height: 7em;
+    color: white;
+}
+
+.page-header>.left-block {
+    float: left;
+    width: 70%;
+}
+
+.page-header>.left-block img {
+    float: left;
+    padding-right: 1em;
+}
+
+.page-header>.left-block>.text {
+    /*padding-left: 10em;*/
+}
+
+.page-header>.left-block .text {
+    text-decoration: none;
+}
+
+.page-header>.right-block {
+    padding-top: 2em;
+    width: 100%;
+    text-align: right;
+}
+
+.page-header>.right-block>.text {
+    vertical-align: bottom;
+}
+
+.page-header>.right-block img {
+    vertical-align: text-bottom;
+}
+
+.page-header a {
+    color: white;
+}
+
+.page-header a:hover, .page-header a:visited {
+    color: white;
+}
+
+h2 {
+    color: #600;
+}
+
+.white {
+    border-radius: 15px;
+    border: 10px solid #369;
+    background-color: white;
+    padding: 0.5em 0 0.5em 0;
+    text-align: justify;
+}
+
+.col-right {
+    height: 100%;
+    /*border-left: 2px solid #ccc;*/
+}
+
+.current_page_item {
+    font-weight: bold;
+}
+
+.col-left {
+    border-right: 2px solid #ccc;
+}
+
+.button-left {
+    float: Left;
+}
+
+.button-right {
+    float: Right;
+}
+
+#search {
+    margin: 0 0 0 2em;
+}
+
+.emphasize {
+    color: #369;
+    font-weight: bold;
+}
+
+
+.grey {
+    color: #333;
+    font-weight: bold;
+}
+
+/**
+ * Footer
+ **/
+footer {
+    color: white;
+}
+
+footer a, footer a:hover, footer a:visited {
+    color: white;
+}
+
+footer .menu-links>a {
+    padding: 0.5em;
+}
+
+/*
+ *
+ * Login page
+ */
+.alert-text {
+    text-align: justify;
+}
+
+.alert-banner {
+    font-weight: bold;
+    text-align: center;
+}
+
+#login-form>.button {
+    text-align: center;
+}
+
+
+/**
+ * Search form
+ */
+#search-form {
+    display: inline;
+}
+
+/**
+ * Entry form
+ */
+#xsdForm li {
+    margin: 0.2em 0 0.2em 0;
+}
+
+

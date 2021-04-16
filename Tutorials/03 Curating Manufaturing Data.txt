@@ -1,0 +1,30 @@
+Open a web browser
+
+Navigate to http://[ip address]:8000
+
+Login
+	* Username: qdr
+	* Password: qdr
+	
+Navigate to "Administration"
+	* Goto Templates > Manage Templates
+	* Click upload Templates
+	* Click browse
+	* Select the "MTConnectStreams_1.3.xsd" from the "Schemas" folder that you copied from the thumb drive
+	* Name the Schema "MTConnectStreams_1.3"
+	* Repeat the process for "NistStreams_1.3.xsd"
+		# Select the "MTConnectStreams_1.3" as the dependency
+	* Both schemas should be listed on the Template Manager page
+	
+Upload data to the database, go to Virtual Machine
+	* cd ~
+	* wget https://raw.githubusercontent.com/usnistgov/smstestbed/master/mtconnect/agent/schemas/NistStreams_1.3.xsd
+	* nano uploadv1.7.py
+	* Find user_name and user_pwd
+		# set both = "qdr"
+	* Ctrl + O, <Enter>
+	* Ctrl + X, <Enter>
+	* sudo -i -u qdr
+	* Password is "user"
+	* cd /home/user/
+	* python uploadv1.7.py -x "/home/user/NistStreams_1.3.xsd" -t "NistStreams_1.3" -p "/home/user/qdr"
